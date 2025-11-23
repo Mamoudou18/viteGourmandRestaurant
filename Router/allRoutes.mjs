@@ -6,6 +6,7 @@ export const allRoutes = [
     new Route("/signin", "Connxion", "/pages/authent/signin.html"),
     new Route("/signup", "Inscription", "/pages/authent/signup.html"),
     new Route("/initPasseword", "Initialisation de mot de passe", "/pages/authent/initPasseword.html"),
+    new Route("/contact", "Contact", "/pages/contact.html"),
 
 ];
     
