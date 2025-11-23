@@ -1,0 +1,75 @@
+<div class="hero-scene text-center text-white">
+    <div class="hero-scene-content">
+        <h1>Inscription</h1>
+    </div>
+</div>
+
+<!----Un visiteur peut se créer un compte, pour cela, il devra communiquer des informations :
+- Nom ainsi que le prénom
+- Numéro de GSM
+- Adresse mail et postale
+- Mot de passe sécurisé (10 caractère minimum constitué au minima d’un caractère
+spécial, une majuscule, une minuscule, un chiffre)-->
+<div class="container">
+    <form>
+        <div class="mb-3 row">
+            <div class="col-12 col-lg-6">
+                <label for="NomInput" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="NomInput" placeholder="Votre nom">
+            </div>
+            <div class="col-12 col-lg-6">
+                <label for="PrenomInput" class="form-label">Prénom</label>
+                <input type="text" class="form-control" id="PrenomInput" placeholder="Votre prénom">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-12 col-lg-6">
+                <label for="PhoneNumber" class="form-label">Téléphone</label>
+                <input type="text" class="form-control" id="PhoneNumber" placeholder="Votre numéro de téléphone">
+            </div>
+        </div>
+        <div>
+            
+        </div>
+        <div class="mb-3 row">
+            <div class="col-6 col-lg-1">
+                <label for="VoieInput" class="form-label">Voie</label>
+                <input type="number" class="form-control" id="VoieInput">
+            </div>
+            <div class="col-12 col-lg-5">
+                <label for="RueInput" class="form-label">Rue</label>
+                <input type="text" class="form-control" id="RueInput">
+            </div>
+            <div class="col-6 col-lg-2">
+                <label for="PostalInput" class="form-label">Code Postal</label>
+                <input type="text" class="form-control" id="PostalInput">
+            </div>
+            <div class="col-12 col-lg-4">
+                <label for="VilleInput" class="form-label">Ville</label>
+                <input type="text" class="form-control" id="VilleInput">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="EmailInput" class="form-label">Email</label>
+            <input type="email" class="form-control" id="EmailInput" placeholder="Saisissez votre email" name="Email">
+        </div>
+        <div class="mb-3 row">
+            <div class="col-12 col-lg-6">
+                <label for="PassewordInput" class="form-label">Mot de passe</label>
+                <input type="password" class="form-control" id="PassewordInput" name="Passeword">
+            </div>
+            <div class="col-12 col-lg-6">
+                <label for="ConfirmPasseword" class="form-label"> Confirmer le mot de passe</label>
+                <input type="password" class="form-control" id="ConfirmPasseword" name="PassewordConfirm">
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
+        </div>
+    </form>
+    <div class="text-center pt-3">
+        <p>
+             Vous avez un compte? <a href="/signin">connectez vous ici</a>
+        </p>
+    </div>
+</div>
