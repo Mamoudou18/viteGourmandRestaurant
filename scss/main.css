@@ -11986,7 +11986,7 @@ html {
 }
 
 main {
-  margin-bottom: 250px;
+  margin-bottom: 380px;
 }
 
 footer.footer {
@@ -12003,6 +12003,7 @@ p {
 
 .hero-scene {
   position: relative;
+  margin-bottom: 15px;
 }
 .hero-scene::before {
   content: "";
@@ -12028,4 +12029,8 @@ p {
 
 .text-justify {
   text-align: justify;
+}
+
+.form-label {
+  color: #936639;
 }/*# sourceMappingURL=main.css.map */
