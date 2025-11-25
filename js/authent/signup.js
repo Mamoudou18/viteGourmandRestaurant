@@ -7,6 +7,7 @@ const inputVille= document.getElementById("VilleInput")
 const inputEmail= document.getElementById("EmailInput");
 const btnInscription = document.getElementById("btn-validate-inscription");
 const inputPasseword = document.getElementById("PassewordInput");
+const inputConfirmPasseword = document.getElementById("ConfirmPasseword");
 
 inputNom.addEventListener("keyup",validateForm);
 inputPrenom.addEventListener("keyup",validateForm);
@@ -16,6 +17,7 @@ inputPostal.addEventListener("keyup",validateForm);
 inputVille.addEventListener("keyup", validateForm);
 inputEmail.addEventListener("keyup",validateForm);
 inputPasseword.addEventListener("keyup",validateForm);
+inputConfirmPasseword.addEventListener("keyup",validateForm);
 
 
 function validateForm(){
@@ -26,9 +28,10 @@ function validateForm(){
     const postalOK= validateCodePostal(inputPostal);
     const villeOK= validateRequired(inputVille);
     const emailOK= validateEmail(inputEmail);
-    const passewordOK = validateCodePasseword(inputPasseword)
+    const passewordOK = validatePasseword(inputPasseword);
+    const confirmpassewordOK = validateConfirmPasseword(inputPasseword,inputConfirmPasseword);
 
-    if(nomOK && prenomOK && numOK && rueOK && postalOK && villeOK && emailOK && passewordOK){
+    if(nomOK && prenomOK && numOK && rueOK && postalOK && villeOK && emailOK && passewordOK && confirmpassewordOK){
         btnInscription.disabled=false;
     }
     else{
@@ -104,8 +107,8 @@ function validateRequired(input){
 
 //validation saisie passeword
 
-function validateCodePasseword(input){
-    const passewordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+function validatePasseword(input){
+    const passewordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{10,}$/;
     const passewordUser= input.value;
 
     if(passewordUser.match(passewordRegex)){
@@ -116,6 +119,21 @@ function validateCodePasseword(input){
     else{
         input.classList.remove("is-valid");
         input.classList.add("is-invalid");
+        return false;
+    }
+}
+
+//validation saisie passeword
+
+function validateConfirmPasseword(inputPWD,inputConfirmPWD){
+    if(inputPWD.value==inputConfirmPWD.value){
+        inputConfirmPWD.classList.add("is-valid");
+        inputConfirmPWD.classList.remove("is-invalid");
+        return true;
+    }
+    else{
+        inputConfirmPWD.classList.remove("is-valid");
+        inputConfirmPWD.classList.add("is-invalid");
         return false;
     }
 }

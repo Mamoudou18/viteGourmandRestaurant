@@ -52,18 +52,27 @@ spécial, une majuscule, une minuscule, un chiffre)-->
         <div class="mb-3">
             <label for="EmailInput" class="form-label">Email</label>
             <input type="email" class="form-control" id="EmailInput" placeholder="Saisissez votre email" name="Email">
+            <div class="invalid-feedback">
+                   Format mail incorrect
+            </div>
         </div>
         <div class="mb-3 row">
             <div class="col-12 col-lg-6">
                 <label for="PassewordInput" class="form-label">Mot de passe</label>
                 <input type="password" class="form-control" id="PassewordInput" name="Passeword">
+                <div class="invalid-feedback">
+                    Mot de passe non sécurisé (10 caractère minimum constitué au minima d’un caractère
+spécial, une majuscule, une minuscule, un chiffre)
+                </div>
             </div>
             <div class="col-12 col-lg-6">
                 <label for="ConfirmPasseword" class="form-label"> Confirmer le mot de passe</label>
                 <input type="password" class="form-control" id="ConfirmPasseword" name="PassewordConfirm">
+                <div class="invalid-feedback">
+                    Les deux mots de passe ne sont pas identiques
             </div>
         </div>
-        <div class="text-center">
+        <div class="text-center pt-3">
             <button type="submit" class="btn btn-primary" id="btn-validate-inscription">S'inscrire</button>
         </div>
     </form>
