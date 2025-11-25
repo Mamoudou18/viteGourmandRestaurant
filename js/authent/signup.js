@@ -6,6 +6,7 @@ const inputPostal= document.getElementById("PostalInput");
 const inputVille= document.getElementById("VilleInput")
 const inputEmail= document.getElementById("EmailInput");
 const btnInscription = document.getElementById("btn-validate-inscription");
+const inputPasseword = document.getElementById("PassewordInput");
 
 inputNom.addEventListener("keyup",validateForm);
 inputPrenom.addEventListener("keyup",validateForm);
@@ -14,6 +15,7 @@ inputRue.addEventListener("keyup",validateForm);
 inputPostal.addEventListener("keyup",validateForm);
 inputVille.addEventListener("keyup", validateForm);
 inputEmail.addEventListener("keyup",validateForm);
+inputPasseword.addEventListener("keyup",validateForm);
 
 
 function validateForm(){
@@ -24,8 +26,9 @@ function validateForm(){
     const postalOK= validateCodePostal(inputPostal);
     const villeOK= validateRequired(inputVille);
     const emailOK= validateEmail(inputEmail);
+    const passewordOK = validateCodePasseword(inputPasseword)
 
-    if(nomOK && prenomOK && numOK && rueOK && postalOK && villeOK && emailOK){
+    if(nomOK && prenomOK && numOK && rueOK && postalOK && villeOK && emailOK && passewordOK){
         btnInscription.disabled=false;
     }
     else{
@@ -88,6 +91,24 @@ function validateCodePostal(input){
 // validation de sais des autres champs du formulaire (Nom, Prenom, Rue, Ville)
 function validateRequired(input){
     if(input.value != ''){
+        input.classList.add("is-valid");
+        input.classList.remove("is-invalid");
+        return true;
+    }
+    else{
+        input.classList.remove("is-valid");
+        input.classList.add("is-invalid");
+        return false;
+    }
+}
+
+//validation saisie passeword
+
+function validateCodePasseword(input){
+    const passewordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+    const passewordUser= input.value;
+
+    if(passewordUser.match(passewordRegex)){
         input.classList.add("is-valid");
         input.classList.remove("is-invalid");
         return true;
