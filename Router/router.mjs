@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import Route from "./Route.mjs";
 import { allRoutes, websiteName } from "./allRoutes.mjs";
 
@@ -62,3 +63,6 @@ window.onpopstate = LoadContentPage;
 window.route = routeEvent;
 // Chargement du contenu de la page au chargement initial
 LoadContentPage();
+
+//Afficher et masquer les éléments en fonction du rôle
+showAndHideElementsforRoles();

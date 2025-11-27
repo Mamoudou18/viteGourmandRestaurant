@@ -12,7 +12,7 @@ function checkConnexion(){
 
         const token = "zkkaknxnckbdMLKNÙFspil=IBFLMoilfOPmpilfpbvlpvpisdk";
         setToken(token);
-        
+        setCookie(RolecookieName,"admin",7);
         //palcer ce token cookie
 
         window.location.replace("/");
