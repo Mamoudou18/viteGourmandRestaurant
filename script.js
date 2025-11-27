@@ -1,5 +1,15 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
+
+
+const signoutBtn = document.getElementById("btn-signout");
 const tokenCookieName = "accessToken";
+
+//Récup du bouton signout
+signoutBtn.addEventListener("click",signout);
+
+
+
 function setToken(token){
     setCookie(tokenCookieName, token, 7)
 }
@@ -7,7 +17,11 @@ function setToken(token){
 function getToken(){
     return getCookie(tokenCookieName);
 }
-
+//Gestion de la déconnexion :  cela consiste à. supprimer le cookie et reactulisé la passe
+ function signout(){
+    eraseCookie(tokenCookieName);
+    window.location.reload();
+ }
 
 function setCookie(name,value,days) {
     var expires = "";
