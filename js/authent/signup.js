@@ -123,7 +123,7 @@ function validatePasseword(input){
     }
 }
 
-//validation saisie passeword
+//confirmation passeword
 
 function validateConfirmPasseword(inputPWD,inputConfirmPWD){
     if(inputPWD.value==inputConfirmPWD.value){

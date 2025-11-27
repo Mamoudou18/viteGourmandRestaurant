@@ -8,13 +8,19 @@
         <div class="mb-3">
             <label for="EmailInput" class="form-label">Email</label>
             <input type="email" class="form-control" id="EmailInput" placeholder="Saisissez votre email" name="Email">
+            <div class="invalid-feedback">
+                Le mail ou le mot de passe est incorrect
+            </div>
         </div>
         <div class="mb-3">
             <label for="PassewordInput" class="form-label">Mot de passe</label>
             <input type="password" class="form-control" id="PassewordInput" name="Passeword">
+             <div class="invalid-feedback">
+                Le mail ou le mot de passe est incorrect
+             </div>
         </div>
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary">Connxion</button>
+        <div class="text-center">    
+            <button type="button" class="btn btn-primary" id="btnSignin">Connxion</button>
         </div>
         <div class="text-center pt-3">
             <a href="/initPasseword" class="btn btn-secondary">Mot de passe oublié ?</a>
