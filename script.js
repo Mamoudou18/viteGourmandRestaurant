@@ -112,3 +112,15 @@ window.addEventListener('load', () => {
         console.log('SLIDER FORCÉ CRÉÉ');
     }
 });
+
+//fluidifier la nav
+const mainPage = document.getElementById('main-page');
+if(mainPage){
+    mainPage.style.opacity = 0;
+    mainPage.style.transform = 'translateY(10px)';
+    setTimeout(() => {
+        mainPage.style.transition = 'all 0.4s ease-out';
+        mainPage.style.opacity = 1;
+        mainPage.style.transform = 'translateY(0)';
+    }, 50);
+}

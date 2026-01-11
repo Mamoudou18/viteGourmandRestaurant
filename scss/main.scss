@@ -7,7 +7,7 @@ html{
 }
 
 main{
-    margin-bottom:360px;
+    margin-bottom:335px;
 }
 
 footer.footer{
@@ -58,17 +58,6 @@ p{
     color: $primary;
 }
 
-//fluidifier la nav
-body {
-  opacity: 0;
-  animation: fadeIn 0.3s ease-in forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
 .noUi-connect {
   background: $primary !important;
 }
@@ -89,5 +78,55 @@ body {
     .col-lg-6 {
         flex: 0 0 auto;
         width: 100%;
+    }
+}
+
+// Mise en forme de la galerie
+
+.image-card{
+    position:relative;
+
+    .titre-image{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.image-card{
+    position:relative;
+    &:hover{
+        .titre-image,
+        .action-image-buttons{
+            opacity: 1;
+        }
+        img{
+            filter: brightness(0.3);
+        }
+    }
+
+    img{
+        transition: all 0.3s;
+        height: 340px;
+    }
+
+    .titre-image,
+    .action-image-buttons{
+        position: absolute;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    .titre-image{
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+    .action-image-buttons{
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
     }
 }

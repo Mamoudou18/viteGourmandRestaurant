@@ -11986,7 +11986,7 @@ html {
 }
 
 main {
-  margin-bottom: 360px;
+  margin-bottom: 335px;
 }
 
 footer.footer {
@@ -12035,16 +12035,6 @@ p {
   color: #936639;
 }
 
-body {
-  opacity: 0;
-  animation: fadeIn 0.3s ease-in forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
 .noUi-connect {
   background: #936639 !important;
 }
@@ -12066,4 +12056,47 @@ body {
     flex: 0 0 auto;
     width: 100%;
   }
+}
+.image-card {
+  position: relative;
+}
+.image-card .titre-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-card {
+  position: relative;
+}
+.image-card:hover .titre-image,
+.image-card:hover .action-image-buttons {
+  opacity: 1;
+}
+.image-card:hover img {
+  filter: brightness(0.3);
+}
+.image-card img {
+  transition: all 0.3s;
+  height: 340px;
+}
+.image-card .titre-image,
+.image-card .action-image-buttons {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.image-card .titre-image {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.image-card .action-image-buttons {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=main.css.map */
