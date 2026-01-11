@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 import Route from "./Route.mjs";
-import { allRoutes, websiteName } from "./allRoutes.mjs";
+import { allRoutes, websiteName} from "./allRoutes.mjs";
 
 // Création d'une route pour la page 404 (page introuvable)
-const route404 = new Route("404", "Page introuvable", "/pages/404.html");
+const route404 = new Route("404", "Page introuvable", "/pages/404.html",[]);
 
 // Fonction pour récupérer la route correspondant à une URL donnée
 const getRouteByUrl = (url) => {
@@ -27,20 +27,39 @@ const LoadContentPage = async () => {
   const path = window.location.pathname;
   // Récupération de l'URL actuelle
   const actualRoute = getRouteByUrl(path);
+
+  //vérification des droits d'accès aux pages
+const allRolesArray = actualRoute.authorize;
+if(allRolesArray.length > 0){
+  if(allRolesArray.includes("disconnected")){
+    if(isConnected()){
+      window.location.replace("/");
+    }
+  }
+  else{
+    const roleUser = getRole();
+    if(allRolesArray.includes(roleUser)){
+      window.location.replace("/");
+    }
+  }
+}
+
   // Récupération du contenu HTML de la route
   const html = await fetch(actualRoute.pathHtml).then((data) => data.text());
   // Ajout du contenu HTML à l'élément avec l'ID "main-page"
   document.getElementById("main-page").innerHTML = html;
-
+  // Suppression de l'ancien script de la route
+  const oldScript = document.getElementById("route-script");
+  if (oldScript) oldScript.remove();
   // Ajout du contenu JavaScript
   if (actualRoute.pathJS != "") {
     // Création d'une balise script
-    var scriptTag = document.createElement("script");
-    scriptTag.setAttribute("type", "text/javascript");
+    const scriptTag = document.createElement("script");
+    scriptTag.setAttribute("type", "module");
     scriptTag.setAttribute("src", actualRoute.pathJS);
 
     // Ajout de la balise script au corps du document
-    document.querySelector("body").appendChild(scriptTag);
+    document.body.appendChild(scriptTag);
   }
 
   // Changement du titre de la page

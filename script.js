@@ -96,3 +96,19 @@ function showAndHideElementsforRoles(){
 
         }})
 }
+
+
+window.addEventListener('load', () => {
+    const slider = document.getElementById('price-slider');
+    console.log('slider:', slider);
+    console.log('noUiSlider:', typeof noUiSlider);
+
+    if (slider && typeof noUiSlider === 'function') {
+        noUiSlider.create(slider, {
+            start: [10, 80],
+            connect: true,
+            range: { min: 0, max: 100 }
+        });
+        console.log('SLIDER FORCÉ CRÉÉ');
+    }
+});

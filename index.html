@@ -7,7 +7,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="scss/main.css">
-    <title>ViteGourmand</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+    <title>Vite & Gourmand</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+    <script src="./script.js" defer></script>
+    <script type="module" src="./Router/router.mjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <header>
@@ -23,13 +28,7 @@
                             <a class="nav-link" href="/">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Nos menus</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Galerie photo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Avis clients</a>
+                            <a class="nav-link" href="/menu">Nos menus</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/contact">Contact</a>
@@ -65,15 +64,12 @@
                 </p>
             </div>
             <div class="col-3 col-lg-3">
-                <p>mentions légales</p>
+                <p><a class="link-underline-primary text-white" href="#">mentions légales</a></p>
             </div>
             <div class="col-3 col-lg-3">
-                <p>conditions générales de vente</p>
+                <p><a class="link-underline-primary text-white" href="#">conditions générales de vente</a></p>
             </div>
         </div>
     </footer>
-    <script src="./script.js"></script>
-    <script type="module" src="./Router/router.mjs"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

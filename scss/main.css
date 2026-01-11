@@ -11986,7 +11986,7 @@ html {
 }
 
 main {
-  margin-bottom: 380px;
+  margin-bottom: 360px;
 }
 
 footer.footer {
@@ -12033,4 +12033,37 @@ p {
 
 .form-label {
   color: #936639;
+}
+
+body {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.noUi-connect {
+  background: #936639 !important;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+  gap: 1rem; /* Espace entre les cartes */
+}
+
+/* Responsive : 1 colonne sur petits écrans */
+@media (max-width: 991px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 992px) {
+  .col-lg-6 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
 }/*# sourceMappingURL=main.css.map */
